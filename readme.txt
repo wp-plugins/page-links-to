@@ -4,7 +4,7 @@ Donate link: http://txfx.net/wordpress-plugins/donate
 Tags: page, redirect, link, external link, repoint
 Requires at least: 2.7
 Tested up to: 3.0.1
-Stable tag: trunk
+Stable tag: 2.4
 
 Lets you make a WordPress page or post link to a URL of your choosing, instead of its WordPress post or page.
 
