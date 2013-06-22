@@ -1,4 +1,4 @@
-# Translation of Page Links To in Norwegian
+# Translation of Page Links To in Swedish
 # This file is distributed under the same license as the Page Links To package.
 msgid ""
 msgstr ""
@@ -13,27 +13,27 @@ msgstr ""
 #: page-links-to.php:209
 msgctxt "Meta box title"
 msgid "Page Links To"
-msgstr "Side lenker til"
+msgstr "Sidan länkar till"
 
 #: page-links-to.php:230
 msgid "A custom URL"
-msgstr "En tilpasset URL"
+msgstr "En anpassad URL"
 
 #: page-links-to.php:233
 msgid "Open this link in a new tab"
-msgstr "Åpne denne lenken i en ny fane"
+msgstr "Öppna denna länk i en ny flik"
 
 #: page-links-to.php:492
 msgid "<strong>Note</strong>: This content is pointing to a custom URL. Use the &#8220;Page Links To&#8221; box to change this behavior."
-msgstr "<strong>Merk</strong>: Dette innholdet peker til en tilpasset nettadresse. Bruk &#8220;Side lenker til&#8221; boksen for å endre denne atferden."
+msgstr "<strong>Obs</strong>: Detta innehåll pekar på en anpassad webbadress. Använd &#8220;sida länkar till&#8221; rutan för att ändra detta beteende."
 
 #: page-links-to.php:228
 msgid "Point this content to:"
-msgstr "Pek dette innholdet til:"
+msgstr "Länka följande innehåll mot:"
 
 #: page-links-to.php:229
 msgid "Its normal WordPress URL"
-msgstr "Sin vanlige WordPress URL"
+msgstr "Det är en vanlig Wordpress-adress (URL)"
 
 msgid "Page Links To"
 msgstr "Page Links To"
@@ -42,7 +42,7 @@ msgid "http://txfx.net/wordpress-plugins/page-links-to/"
 msgstr "http://txfx.net/wordpress-plugins/page-links-to/"
 
 msgid "Allows you to point WordPress pages or posts to a URL of your choosing.  Good for setting up navigational links to non-WP sections of your site or to off-site resources."
-msgstr "Lar deg peke WordPress sider eller poster til en vilkårlig URL. Kjekt å bruke til å peke navigasjonslinker til annet innhold på siden din eller til ressurser som ikke er på ditt domene."
+msgstr "Låter dig länka sidor och inlägg i Wordpress till en adress (URL) som du själv väljer. Praktiskt fö ratt sätta upp navigeringslänkar till delar av webbplatsen som inte är Wordpress, och till externa webbplatser."
 
 msgid "Mark Jaquith"
 msgstr "Mark Jaquith"
