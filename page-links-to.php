@@ -3,7 +3,7 @@
 Plugin Name: Page Links To
 Plugin URI: http://txfx.net/wordpress-plugins/page-links-to/
 Description: Allows you to point WordPress pages or posts to a URL of your choosing.  Good for setting up navigational links to non-WP sections of your site or to off-site resources.
-Version: 2.9.4
+Version: 2.9.5
 Author: Mark Jaquith
 Author URI: http://coveredwebservices.com/
 Text Domain: page-links-to
@@ -84,6 +84,10 @@ class CWS_PageLinksTo extends WP_Stack_Plugin {
 		$this->hook( 'save_post'           );
 		$this->hook( 'wp_nav_menu_objects' );
 		$this->hook( 'plugin_row_meta'     );
+
+		// Metadata validation grants users editing privileges for our custom fields
+		register_meta('post', self::LINK_META_KEY, null, '__return_true');
+		register_meta('post', self::TARGET_META_KEY, null, '__return_true');
 	}
 
 	/**
@@ -459,7 +463,20 @@ class CWS_PageLinksTo extends WP_Stack_Plugin {
 		if ( ! get_queried_object_id() )
 			return false;
 
-		return $this->get_link( get_queried_object_id() );
+		$link = $this->get_link( get_queried_object_id() );
+
+		// Convert server- and protocol-relative URLs to absolute URLs
+		if ( "/" === $link[0] ) {
+			// Protocol-relative
+			if ( "/" === $link[1] ) {
+				$link = set_url_scheme( 'http:' . $link );
+			} else {
+				// Host-relative
+				$link = set_url_scheme( 'http://' . $_SERVER["HTTP_HOST"] . $link );
+			}
+		}
+
+		return $link;
 	}
 
 	/**
@@ -513,7 +530,7 @@ class CWS_PageLinksTo extends WP_Stack_Plugin {
 	function wp_nav_menu_objects( $items ) {
 		$new_items = array();
 		foreach ( $items as $item ) {
-			if ( $this->get_target( $item->object_id ) )
+			if ( isset( $item->object_id ) && $this->get_target( $item->object_id ) )
 				$item->target = '_blank';
 			$new_items[] = $item;
 		}
